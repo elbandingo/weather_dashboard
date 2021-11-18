@@ -17,19 +17,19 @@
             <h2>Search for a City:</h2>
             <!--create the form-->
             <form action="">
-                <input type="text" placeholder="City Name" class="w-100 rounded-pill p-2 m-1 text-center" />
+                <input type="text" placeholder="City Name" class="w-100 rounded-pill p-2 m-1 text-center" id="inputValue" />
             </form>
-            <button class="btn btn-primary rounded-pill p1 m-1 w-100">submit</button>
+            <button class="btn btn-primary rounded-pill p1 m-1 w-100" id="search-btn">submit</button>
         </div>
         <!--container for content displayed after searching -->
         <div class="col-12 col-md-8 p-2 m-3">
         <div class="border p-2">
-            <h3 id="ID NEEDED HERE TO REPLACE CONTENT FROM API">TORONTO, ON (11/18/2021)</h3>
+            <h3 id="city-location">TORONTO, ON (11/18/2021)</h3>
             <br>
-            <p class="p-2">Temperature: <span id="ID FOR API HERE"></span></p>
-            <p class="p-2">Wind: <span id="ID FOR API HERE"></span></p>
-            <p class="p-2">Humidity: <span id="ID FOR API HERE"></span></p>
-            <p class="p-2">UV Index: </p>
+            <p class="p-2">Temperature: <span id="city-temp"></span></p>
+            <p class="p-2">Wind: <span id="city-wind"></span></p>
+            <p class="p-2">Humidity: <span id="city-humidity"></span></p>
+            <p class="p-2">UV Index: <span id="city-uv"></span></p>
         </div>
         <!--create a div for the 5 day forecast-->
             <!--header for the 5 day forecast-->
@@ -91,5 +91,7 @@
 
     </div>
     
+
+    <script src="../weather_dashboard/assets/js/main.js"></script>
 </body>
 </html>
