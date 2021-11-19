@@ -54,7 +54,21 @@ var displayMainStats = function(name,temp,wind,humidity,uvLat,uvLon){
             response.json().then(function(data){
                 var currUvi = data.current.uvi;
                 console.log("found lat and lon " + uvLat + uvLon);
-                cityUvEl.textContent = currUvi;
+                
+                if(currUvi >= 7){
+                    cityUvEl.classList = "badge bg-danger";
+                    cityUvEl.textContent = currUvi;
+                }
+
+                else if(currUvi < 7 && currUvi > 2) {
+                    cityUvEl.classList = "badge bg-warning";
+                    cityUvEl.textContent = currUvi;
+
+                } 
+                else {
+                    cityUvEl.classList = "badge bg-success";
+                    cityUvEl.textContent = currUvi;
+                } 
             })
         }
     })

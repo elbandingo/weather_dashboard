@@ -16,10 +16,10 @@
         <div class="col-12 col-md-3 m-3">
             <h2>Search for a City:</h2>
             <!--create the form-->
-            <form action="">
-                <input type="text" placeholder="City Name" class="w-100 rounded-pill p-2 m-1 text-center" id="inputValue" />
+            <form onsubmit="getWeatherData(cityLoc)">
+                <input type="text" placeholder="City Name" class="w-100 rounded-pill p-2 m-1 text-center" id="inputValue" name="cityLoc" />
             </form>
-            <button class="btn btn-primary rounded-pill p1 m-1 w-100" id="search-btn">submit</button>
+            <button type="submit" class="btn btn-primary rounded-pill p1 m-1 w-100" id="search-btn">submit</button>
         </div>
         <!--container for content displayed after searching -->
         <div class="col-12 col-md-8 p-2 m-3">
