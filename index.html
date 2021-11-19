@@ -13,19 +13,19 @@
 
     <!--create a div row to contain the search bar and history on left, taking up 3/12-->
     <div class="row">
-        <div class="col-12 col-md-3 m-3">
+        <div class="col-12 col-md-3 m-3" id="search-bar">
             <h2>Search for a City:</h2>
             <!--create the form-->
-            <form onsubmit="getWeatherData(cityLoc)">
+            <form onsubmit="">
                 <input type="text" placeholder="City Name" class="w-100 rounded-pill p-2 m-1 text-center" id="inputValue" name="cityLoc" />
             </form>
-            <button type="submit" class="btn btn-primary rounded-pill p1 m-1 w-100" id="search-btn">submit</button>
+            <button type="submit" class="btn btn-primary rounded-pill p1 m-1 w-100" id="search-btn">Search</button>
+
         </div>
         <!--container for content displayed after searching -->
         <div class="col-12 col-md-8 p-2 m-3">
         <div class="border p-2">
-            <h3 id="city-location">TORONTO, ON (11/18/2021)</h3>
-            <br>
+            <h3 id="city-location">Search for a City!</h3>
             <p class="p-2">Temperature: <span id="city-temp"></span></p>
             <p class="p-2">Wind: <span id="city-wind"></span></p>
             <p class="p-2">Humidity: <span id="city-humidity"></span></p>

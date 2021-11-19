@@ -6,13 +6,15 @@ var cityWindEl = document.querySelector("#city-wind");
 var cityHumidityEl = document.querySelector("#city-humidity");
 var cityUvEl = document.querySelector("#city-uv");
 var buttonEl = document.querySelector("#search-btn");
-
+var historyEl = document.querySelector("#search-bar");
+var history = [];
 //create button handler when submit is clicked and set values
 buttonEl.addEventListener("click", function(){
     var cityLocation = inputValueEl.value.trim();
     console.log("city name: " + cityLocation);
     if (cityLocation) {
         getWeatherData(cityLocation);
+        displayHistory(cityLocation);
     } else {
         alert("please enter a city!");
     }
@@ -110,5 +112,19 @@ var displayFutureForecast = function(data) {
         HumDisplay.textContent = humidity;
 
     }
+
+}
+
+// create the search history
+var displayHistory = function(lastSearched){
+    console.log(lastSearched + " will be going into the history");
+    var btn = document.createElement("button");
+    btn.classList = "btn btn-dark mt-2 w-100 bg-gradient rounded-pill";
+    btn.textContent = lastSearched;
+    historyEl.appendChild(btn);
+    
+    btn.addEventListener("click", function(){
+        getWeatherData(lastSearched);
+    })
 
 }
