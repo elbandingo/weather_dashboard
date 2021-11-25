@@ -51,7 +51,7 @@ var getWeatherData = function(city){
 }
 
 var displayMainStats = function(name,temp,wind,humidity,uvLat,uvLon,icon){
-    var uviUrl = 'http://api.openweathermap.org/data/2.5/onecall?lat='+ uvLat + '&lon='+ uvLon + '&units=metric&dt=1586468027&appid=7bd6e4e882f11d63bf4270470fe9d78a';
+    var uviUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat='+ uvLat + '&lon='+ uvLon + '&units=metric&dt=1586468027&appid=7bd6e4e882f11d63bf4270470fe9d78a';
     fetch(uviUrl).then(function(response){
         if(response.ok){
             response.json().then(function(data){
@@ -85,9 +85,8 @@ var displayMainStats = function(name,temp,wind,humidity,uvLat,uvLon,icon){
     cityHumidityEl.textContent = humidity + " %";
     inputValueEl.value = "";
     var displayIconEl = document.createElement("img")
-    displayIconEl.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+    displayIconEl.src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
     cityNameEl.appendChild(displayIconEl);
-    
 
 }
 
@@ -101,9 +100,8 @@ var displayFutureForecast = function(data) {
         var temp = currDayInfo[i].temp.day;
         var wind = currDayInfo[i].wind_speed;
         var humidity = currDayInfo[i].humidity;
-        console.log(icon, temp, wind, humidity);
         var iconDisplay = document.querySelector("#day-" + [i]);
-        iconDisplay.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+        iconDisplay.src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
         var tempDisplay = document.querySelector("#t-" + [i]);
         tempDisplay.textContent = temp + " °C";
         var windDisplay = document.querySelector("#w-" + [i]);
@@ -117,7 +115,6 @@ var displayFutureForecast = function(data) {
 
 // create the search history
 var displayHistory = function(lastSearched){
-    console.log(lastSearched + " will be going into the history");
     var btn = document.createElement("button");
     btn.classList = "btn btn-dark mt-2 w-100 bg-gradient rounded-pill";
     btn.textContent = lastSearched;
